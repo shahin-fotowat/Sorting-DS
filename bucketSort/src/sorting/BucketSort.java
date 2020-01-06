@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class BucketSort {
 	
-	int arr[];
+	private int arr[];
 
 	//Constructor
 	public BucketSort(int arr[]) {
@@ -27,7 +27,7 @@ public class BucketSort {
 	//Prints the Buckets
 	public void printBucket(ArrayList<Integer>[] buckets) {
 		for(int i = 0; i < buckets.length; i++) {
-			System.out.println("\nBucket#" + i + " :");
+			System.out.println("\nBucket #" + i + " :");
 			for (int j = 0; j < buckets[i].size(); j++) {
 				System.out.print(buckets[i].get(j) + "  ");
 			}
@@ -40,13 +40,10 @@ public class BucketSort {
 		//Create sqrt# of buckets, so that the distribution is even
 		int numberOfBuckets = (int) Math.ceil(Math.sqrt(arr.length));
 		int maxValue = Integer.MIN_VALUE;
-		int minValue = Integer.MAX_VALUE;
 		
 		//Find the min and max value from the array
 		for(int value: arr) {
-			if(value < minValue) {
-				minValue = value;
-			} else if (value > maxValue) {
+			if (value > maxValue) {
 				maxValue = value;
 			}
 		}
@@ -61,7 +58,7 @@ public class BucketSort {
 		
 		//Placing each value in the unsorted array into a bucket
 		for(int value: arr) {
-			int bucketNumber = (int) Math.ceil((value * numberOfBuckets) / maxValue);
+			int bucketNumber = (int) Math.ceil((value * numberOfBuckets) / (maxValue * 1.0));
 			//System.out.println("bucketNumber: " + bucketNumber);
 			buckets[bucketNumber - 1].add(value);
 		}		
@@ -69,7 +66,7 @@ public class BucketSort {
 		System.out.println("\n\nPrinting buckets before Sorting...");
 		printBucket(buckets);
 		
-		//Sort Buckets
+		//Sort the Buckets
 		for(ArrayList<Integer> bucket: buckets) {
 			Collections.sort(bucket);
 		}

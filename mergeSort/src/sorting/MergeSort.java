@@ -9,9 +9,8 @@ public class MergeSort {
 			mergeSort(Array, m + 1, right);
 			merge(Array, left, m, right);
 		}
-	}//end of method
+	}
 
-	
 	static void merge(int[] A, int left, int middle, int right) {
 		int [] leftTmpArray = new int[middle - left + 2];  //Create tmp arrays
 		int [] rightTmpArray = new int[right - middle + 1];
@@ -33,13 +32,11 @@ public class MergeSort {
 				j++;
 			}
 		}
-	}//end of method
-	
+	}
 	
 	public static void printArray(int []array) {
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i]+"  ");
+			System.out.print(array[i] + "  ");
 		}
-	}//end of method
-
+	}
 }//end of class

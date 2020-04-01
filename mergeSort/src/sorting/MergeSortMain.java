@@ -16,6 +16,5 @@ public class MergeSortMain {
 		
 		System.out.println("\nAfter sorting: ");
 		MergeSort.printArray(array);
-	}//end of method
-
+	}
 }//end of class

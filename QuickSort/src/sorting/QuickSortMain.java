@@ -12,6 +12,5 @@ public class QuickSortMain {
 		
 		System.out.println("\n\nAfter sorting: ");
 		QuickSort.printArray(array);
-	}//end of method
-
+	}
 }//end of class
